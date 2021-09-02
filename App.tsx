@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Matches, Messages, Profile } from "./screens";
+import { Home, Matches, Messages, Profile,Account,Login} from "./screens";
 import { PRIMARY_COLOR, DARK_GRAY, BLACK, WHITE } from "./assets/styles";
 import TabBarIcon from "./components/TabBarIcon";
 
@@ -39,14 +39,14 @@ const App = () => (
             }}
           >
             <Tab.Screen
-              name="Explore"
+              name="Reco"
               component={Home}
               options={{
                 tabBarIcon: ({ focused }) => (
                   <TabBarIcon
                     focused={focused}
                     iconName="search"
-                    text="Explore"
+                    text="Reco"
                   />
                 ),
               }}
@@ -87,8 +87,22 @@ const App = () => (
                 tabBarIcon: ({ focused }) => (
                   <TabBarIcon
                     focused={focused}
-                    iconName="person"
+                    iconName="male-female"
                     text="Profile"
+                  />
+                ),
+              }}
+            />
+
+            <Tab.Screen
+              name="Account"
+              component={Account}
+              options={{
+                tabBarIcon: ({ focused }) => (
+                  <TabBarIcon
+                    focused={focused}
+                    iconName="person-circle"
+                    text="Account"
                   />
                 ),
               }}

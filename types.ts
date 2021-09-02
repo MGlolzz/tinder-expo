@@ -1,5 +1,7 @@
 export type CardItemT = {
   description?: string;
+  age?: string;
+  info1?: string;
   hasActions?: boolean;
   hasVariant?: boolean;
   image: any;
@@ -27,6 +29,8 @@ export type ProfileItemT = {
   info2?: string;
   info3?: string;
   info4?: string;
+  firstDate?: string;
+  description?: string;
   location?: string;
   matches: string;
   name: string;
@@ -44,6 +48,7 @@ export type DataT = {
   isOnline: boolean;
   match: string;
   description: string;
+  firstDate?:string;
   message: string;
   image: any;
   age?: string;
@@ -52,4 +57,25 @@ export type DataT = {
   info3?: string;
   info4?: string;
   location?: string;
+};
+
+export type AccountT = {
+  id: number;
+  name: string;
+  description: string;
+  image: any;
+  firstDate?:string;
+  age?: string;
+  interest?: string;
+  background?: string;
+  hobby?: string;
+  location?: string;
+};
+
+export type ChatT = {
+
+  id:number,
+  date:string, 
+  type:string, 
+  message: string,
 };

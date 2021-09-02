@@ -4,14 +4,16 @@ import Icon from "./Icon";
 import { CardItemT } from "../types";
 import styles, {
   DISLIKE_ACTIONS,
-  FLASH_ACTIONS,
+  
   LIKE_ACTIONS,
-  STAR_ACTIONS,
+  
   WHITE,
 } from "../assets/styles";
 
 const CardItem = ({
   description,
+  age,
+  info1,
   hasActions,
   hasVariant,
   image,
@@ -49,7 +51,7 @@ const CardItem = ({
       {matches && (
         <View style={styles.matchesCardItem}>
           <Text style={styles.matchesTextCardItem}>
-            <Icon name="heart" color={WHITE} size={13} /> {matches}% Match!
+            <Icon name="heart" color={WHITE} size={13} /> {matches}% Similarity!
           </Text>
         </View>
       )}
@@ -57,13 +59,19 @@ const CardItem = ({
       {/* NAME */}
       <Text style={nameStyle}>{name}</Text>
 
+      {/* AGE */}
+      {age && (
+        <Text style={styles.descriptionCardItem}>{age}-{info1}</Text>
+      )}
+
       {/* DESCRIPTION */}
       {description && (
         <Text style={styles.descriptionCardItem}>{description}</Text>
       )}
 
+      
       {/* STATUS */}
-      {!description && (
+      {isOnline && (
         <View style={styles.status}>
           <View style={isOnline ? styles.online : styles.offline} />
           <Text style={styles.statusText}>
@@ -75,9 +83,7 @@ const CardItem = ({
       {/* ACTIONS */}
       {hasActions && (
         <View style={styles.actionsCardItem}>
-          <TouchableOpacity style={styles.miniButton}>
-            <Icon name="star" color={STAR_ACTIONS} size={14} />
-          </TouchableOpacity>
+         
 
           <TouchableOpacity style={styles.button}>
             <Icon name="heart" color={LIKE_ACTIONS} size={25} />
@@ -87,9 +93,7 @@ const CardItem = ({
             <Icon name="close" color={DISLIKE_ACTIONS} size={25} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.miniButton}>
-            <Icon name="flash" color={FLASH_ACTIONS} size={14} />
-          </TouchableOpacity>
+          
         </View>
       )}
     </View>

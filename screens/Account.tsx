@@ -6,24 +6,23 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import { Icon, ProfileItem } from "../components";
-import {data} from "../assets/data/demo";
-import styles, { WHITE } from "../assets/styles";
+import { Icon,AccItem } from "../components";
 
-const Profile = () => {
+import {Accountdata} from "../assets/data/demo";
+import styles, { BLACK, WHITE } from "../assets/styles";
+
+const Account = () => {
   const {
-    age,
-    image,
-    info1,
-    info2,
-    info3,
-    info4,
-    firstDate,
-    description,
-    location,
-    match,
-    name,
-  } = data[7];
+ name,
+  description,
+  firstDate,
+  age,
+  image,
+  interest,
+  background,
+  hobby,
+  location,
+  } = Accountdata;
 
   return (
     <ImageBackground
@@ -31,9 +30,8 @@ const Profile = () => {
       style={styles.bg}
     >
       <ScrollView style={styles.containerProfile}>
-        <ImageBackground source={image} style={styles.photo}
-        imageStyle={{borderRadius:150}}>
-          <View style={[styles.top, {marginHorizontal:-50}]}>
+        <ImageBackground source={image} style={styles.photo}>
+          <View style={[styles.top,{marginHorizontal:-50}]}>
             <TouchableOpacity>
               <Icon
                 name="chevron-back"
@@ -52,35 +50,39 @@ const Profile = () => {
               />
             </TouchableOpacity>
           </View>
-        
         </ImageBackground>
-        <ProfileItem
-          matches={match}
-          name={name}
-          age={age}
-          location={location}
-          description={description}
-          firstDate={firstDate}
-          info1={info1}
-          info2={info2}
-          info3={info3}
-          info4={info4}
+
+        <AccItem
+          
+            name={name}
+            description={description}
+            firstDate={firstDate}
+            age={age}
+            interest={interest}
+            background={background}
+            hobby={hobby}
+            location={location}
+            
+
+          
           
         />
 
         <View style={styles.actionsProfile}>
-          <TouchableOpacity style={styles.circledButton}>
-            <Icon name="ellipsis-horizontal" size={20} color={WHITE} />
+          <TouchableOpacity style={styles.roundedButton}>
+            <Icon name="save" size={20} color={WHITE} />
+            <Text style={styles.textButton}>Save</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.roundedButton}>
-            <Icon name="chatbubble" size={20} color={WHITE} />
-            <Text style={styles.textButton}>Chat Now</Text>
+            <Icon name="md-color-wand-sharp" size={20} color={WHITE} />
+            <Text style={styles.textButton}>Edit</Text>
           </TouchableOpacity>
         </View>
+
       </ScrollView>
     </ImageBackground>
   );
 };
 
-export default Profile;
+export default Account;

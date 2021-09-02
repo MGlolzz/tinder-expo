@@ -1,19 +1,20 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-export const PRIMARY_COLOR = "#7444C0";
-export const SECONDARY_COLOR = "#5636B8";
+export const PRIMARY_COLOR = "#1e90ff";
+export const SECONDARY_COLOR = "#ff1493";
 export const WHITE = "#FFFFFF";
 export const GRAY = "#757E90";
 export const DARK_GRAY = "#363636";
 export const BLACK = "#000000";
+export const YELLOW = "#ffff00";
 
 export const ONLINE_STATUS = "#46A575";
 export const OFFLINE_STATUS = "#D04949";
 
-export const STAR_ACTIONS = "#FFA200";
+
 export const LIKE_ACTIONS = "#B644B2";
 export const DISLIKE_ACTIONS = "#363636";
-export const FLASH_ACTIONS = "#5028D7";
+
 
 export const DIMENSION_WIDTH = Dimensions.get("window").width;
 export const DIMENSION_HEIGHT = Dimensions.get("window").height;
@@ -43,6 +44,7 @@ export default StyleSheet.create({
   },
   descriptionCardItem: {
     color: GRAY,
+    paddingBottom: 5,
     textAlign: "center",
   },
   status: {
@@ -138,6 +140,16 @@ export default StyleSheet.create({
     textAlign: "center",
   },
 
+
+  //COMPONENT - FILTER POP
+  pickerStyle: {
+    width: "100%",
+    height: 40,
+    color: DARK_GRAY,
+    fontSize: 12,
+    borderRadius:20,
+    
+  },
   // COMPONENT - MESSAGE
   containerMessage: {
     flex: 1,
@@ -160,6 +172,64 @@ export default StyleSheet.create({
     paddingTop: 5,
   },
 
+  //COMPONENT - CHAT_POP
+  chatFooter:{
+    flexDirection: 'row',
+    height:60,
+    backgroundColor: '#eeeeee',
+    paddingHorizontal:10,
+    padding:5,
+  },
+
+  chatPush:{
+    flex:1,
+  },
+
+  chatInputContainer:{
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
+    borderRadius:30,
+    borderBottomWidth: 1,
+    height:40,
+    flexDirection: 'row',
+    alignItems:'center',
+    flex:1,
+    marginRight:10,
+  },
+
+  chatInputs:{
+    height:40,
+    marginLeft:16,
+    borderBottomColor: '#FFFFFF',
+    flex:1,
+  },
+
+  ChatList:{
+    paddingHorizontal: 17,
+  },
+
+  chatItemIn:{
+     alignSelf: 'flex-start'
+  },
+
+  chatItemOut:{
+     alignSelf: 'flex-end'
+  },
+
+  chatItem:{
+    marginVertical: 14,
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor:"#eeeeee",
+    borderRadius:300,
+    padding:5,
+  },
+
+  chatBalloon:{
+    maxWidth: 250,
+    padding: 15,
+    borderRadius: 20,
+  },
   // COMPONENT - PROFILE ITEM
   containerProfileItem: {
     backgroundColor: WHITE,
@@ -167,7 +237,7 @@ export default StyleSheet.create({
     paddingBottom: 25,
     margin: 20,
     borderRadius: 8,
-    marginTop: -65,
+    marginTop: -15,
     elevation: 1,
     shadowOpacity: 0.05,
     shadowRadius: 10,
@@ -175,7 +245,7 @@ export default StyleSheet.create({
     shadowOffset: { height: 0, width: 0 },
   },
   matchesProfileItem: {
-    width: 135,
+    width: 145,
     marginTop: -15,
     backgroundColor: PRIMARY_COLOR,
     paddingVertical: 7,
@@ -183,10 +253,22 @@ export default StyleSheet.create({
     borderRadius: 20,
     alignSelf: "center",
   },
+
+  titleAccItem: {
+    width: 165,
+    marginTop: -15,
+    backgroundColor: PRIMARY_COLOR,
+    paddingVertical: 7,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    alignSelf: "center",
+  },
+
   matchesTextProfileItem: {
     color: WHITE,
     textAlign: "center",
   },
+
   name: {
     paddingTop: 25,
     paddingBottom: 5,
@@ -213,6 +295,8 @@ export default StyleSheet.create({
   infoContent: {
     color: GRAY,
     fontSize: 13,
+    flexWrap: 'wrap'
+
   },
 
   // CONTAINER - GENERAL
@@ -223,8 +307,8 @@ export default StyleSheet.create({
     height: DIMENSION_HEIGHT,
   },
   top: {
-    paddingTop: 50,
-    marginHorizontal: 10,
+    paddingTop: 20,
+    marginHorizontal:0,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -234,6 +318,11 @@ export default StyleSheet.create({
   // CONTAINER - HOME
   containerHome: {
     marginHorizontal: 10,
+  },
+
+  // CONTAINER - CHAT
+  ChatContainer:{
+    flex:1,
   },
 
   // CONTAINER - MATCHES
@@ -253,20 +342,31 @@ export default StyleSheet.create({
   // CONTAINER - PROFILE
   containerProfile: { marginHorizontal: 0 },
   photo: {
+    width: DIMENSION_WIDTH-100,
+    alignSelf: "center",
+    marginTop:20,
+    height: 300,
+  },
+  accountPhoto: {
     width: DIMENSION_WIDTH,
-    height: 450,
+    
+    height: 300,
   },
   topIconLeft: {
     paddingLeft: 20,
+    color:"black",
   },
   topIconRight: {
     paddingRight: 20,
+    color:"black",
   },
   actionsProfile: {
     justifyContent: "center",
     flexDirection: "row",
     alignItems: "center",
   },
+
+
   textButton: {
     fontSize: 15,
     color: WHITE,

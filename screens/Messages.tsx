@@ -7,8 +7,8 @@ import {
   View,
   FlatList,
 } from "react-native";
-import { Icon, Message } from "../components";
-import DEMO from "../assets/data/demo";
+import { Icon, Message,ChatPop } from "../components";
+import {data} from "../assets/data/demo";
 import styles, { DARK_GRAY } from "../assets/styles";
 
 const Messages = () => (
@@ -21,11 +21,12 @@ const Messages = () => (
         <Text style={styles.title}>Messages</Text>
         <TouchableOpacity>
           <Icon name="ellipsis-vertical" color={DARK_GRAY} size={20} />
+          <ChatPop/>
         </TouchableOpacity>
       </View>
 
       <FlatList
-        data={DEMO}
+        data={data}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity>
